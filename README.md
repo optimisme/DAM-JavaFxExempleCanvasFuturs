@@ -1,6 +1,6 @@
-# Exemple Canvas JavaFX #
+# Exemple Futurs i JavaFX #
 
-En aquest projecte hi ha diversos exemples de com dibuixar al Canvas de JavaFX
+En aquest projecte hi ha diversos exemples de com dibuixar en un Canvas de JavaFx mentre algunes dades es canvien a través de futurs
 
 ### Compilació i funcionament ###
 
