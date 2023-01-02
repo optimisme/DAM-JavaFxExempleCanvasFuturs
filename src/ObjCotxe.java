@@ -8,7 +8,7 @@ public class ObjCotxe implements DrawingObj {
     public double x = 0;
     public double y = 100;
     public double destiX = 0;
-    public Image img = new Image("./imgs/cotxe.png");
+    public Image img = new Image("./assets/cotxe.png");
 
     // Animar la posició del cotxe cap al destí
     public void run(Canvas cnv, double fps) {

@@ -7,7 +7,7 @@ public class ObjMoto implements DrawingObj {
     // Definir atributs
     public double x = 0;
     public double y = 75;
-    public Image img = new Image("./imgs/moto.png");
+    public Image img = new Image("./assets/moto.png");
 
     // Animar
     public void run(Canvas cnv, double fps) {

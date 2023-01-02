@@ -8,7 +8,7 @@ public class ObjBus implements DrawingObj {
     public String direccio = "quiet";
     public double x = 0;
     public double y = 150;
-    public Image img = new Image("./imgs/bus.png");
+    public Image img = new Image("./assets/bus.png");
 
     // Animar
     public void run(Canvas cnv, double fps) {
