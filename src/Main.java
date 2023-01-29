@@ -1,16 +1,10 @@
 import java.util.ArrayList;
 
 import javafx.application.Application;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.Priority;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
  
 public class Main extends Application {
@@ -74,67 +68,6 @@ public class Main extends Application {
 
         // Acabar l'aplicació
         System.out.println("Acabar");
-    }
-
-    public VBox buildInterface(Stage primaryStage) {
-
-        double hboxHeight = 50;
-
-        // Definir la divisió vertical
-        VBox vbox = new VBox(0);
-        vbox.setAlignment(Pos.TOP_CENTER);
-
-            // Definir l'area de dibuix
-            Canvas canvas = new Canvas(100, 100);
-            drawing.start(canvas);
-            canvas.heightProperty().bind(vbox.heightProperty().subtract(hboxHeight));
-            canvas.widthProperty().bind(vbox.widthProperty());
-            
-            // Definir l'espai horitzontal dels botons
-            HBox hbox = new HBox(8);
-            hbox.setAlignment(Pos.CENTER);
-            hbox.setMinHeight(hboxHeight);
-            hbox.setMaxHeight(hboxHeight);
-
-                // Definir el boto
-                Button buttonC = new Button();
-                buttonC.setText("Cotxe Y");
-                buttonC.setOnAction(actionEvent ->  {
-                    cotxe.posicionaY(); 
-                });
-
-                // Definir el boto
-                Button buttonM = new Button();
-                buttonM.setText("Moto Y");
-                buttonM.setOnAction(actionEvent ->  {
-                    moto.posicionaY(); 
-                });
-
-                // Definir el boto
-                Button buttonP = new Button();
-                buttonP.setText("Pausa threads");
-                buttonP.setOnAction(actionEvent ->  {
-                    Boolean paused = futures.getPaused();
-                    if (paused) {
-                        buttonP.setText("Pausa threads");
-                    } else {
-                        buttonP.setText("Reprendre threads");
-                    }
-                    futures.setPaused(!futures.getPaused());
-                });
-
-            hbox.getChildren().addAll(buttonC, buttonM, buttonP);
-
-        vbox.getChildren().addAll(canvas);
-        vbox.getChildren().addAll(hbox);
-        VBox.setVgrow(canvas, Priority.ALWAYS);
-        VBox.setVgrow(hbox, Priority.NEVER);
-
-        //vbox.setBackground(new Background(new BackgroundFill(Color.BLUE,null,null)));
-        //hbox.setBackground(new Background(new BackgroundFill(Color.ORANGE,null,null)));
-
-        return vbox;
-
     }
 
     public void keyEvent (KeyEvent evt) {
