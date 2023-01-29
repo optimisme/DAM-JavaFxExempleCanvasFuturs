@@ -15,8 +15,8 @@ import javafx.stage.Stage;
  
 public class Main extends Application {
 
-    private Futures futures = new Futures();
-    private Drawing drawing = new Drawing();
+    public static Futures futures = new Futures();
+    public static Drawing drawing = new Drawing();
     public static ArrayList<DrawingObj> drawingList = new ArrayList<>();
 
     public static ObjCarretera carretera = new ObjCarretera();
@@ -39,37 +39,27 @@ public class Main extends Application {
     }
     
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage stage) throws Exception {
 
-        int windowHeight = 350;
-        int windowWidth = 300;
+        final int windowWidth = 500;
+        final int windowHeight = 400;
 
-        // Construir interficie
-        VBox root = buildInterface(primaryStage);
+        UtilsViews.stage = stage;
+        UtilsViews.parentContainer.setStyle("-fx-font: 14 arial;");
+        UtilsViews.addView(getClass(), "View0", "./assets/view0.fxml");
 
-        // Definir escena
-        Scene  scene = new Scene(root);
+        Scene scene = new Scene(UtilsViews.parentContainer);
         scene.addEventFilter(KeyEvent.ANY, keyEvent -> { keyEvent(keyEvent); });
 
-        // Iniciar finestra d'app
-        primaryStage.setTitle("Carretera");
-        primaryStage.onCloseRequestProperty();
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        primaryStage.setResizable(true);
-        primaryStage.setHeight(windowHeight);
-        primaryStage.setWidth(windowWidth);
-        primaryStage.setMinHeight(windowHeight);
-        primaryStage.setMinWidth(windowWidth);
-        primaryStage.heightProperty().addListener((observable, oldValue, newvalue) -> {
-            double titleHeight = primaryStage.getHeight() - scene.getHeight();
-            double rootHeight = primaryStage.getHeight() - titleHeight;
-            root.setPrefHeight(rootHeight);
-        });
+        stage.setScene(scene);
+        stage.onCloseRequestProperty(); // Call close method when closing window
+        stage.setTitle("Exemples Canvas Futurs");
+        stage.setMinWidth(windowWidth);
+        stage.setMinHeight(windowHeight);
+        stage.show();
 
-        // Definir icona d'app
-        Image icon = new Image("file:./imgs/icon.png");
-        primaryStage.getIcons().add(icon);
+        Image icon = new Image("file:./assets/icon.png");
+        stage.getIcons().add(icon);
 
         futures.start();
     }
@@ -144,6 +134,7 @@ public class Main extends Application {
         //hbox.setBackground(new Background(new BackgroundFill(Color.ORANGE,null,null)));
 
         return vbox;
+
     }
 
     public void keyEvent (KeyEvent evt) {
