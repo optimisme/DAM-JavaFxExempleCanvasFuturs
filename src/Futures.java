@@ -48,9 +48,9 @@ public class Futures {
                     };
 
                     LocalDateTime now = LocalDateTime.now();
-                    Main.rellotge.setHores(now.getHour());
-                    Main.rellotge.setMinuts(now.getMinute());
-                    Main.rellotge.setSegons(now.getSecond());
+                    Main.ctrl0.drawing.rellotge.setHores(now.getHour());
+                    Main.ctrl0.drawing.rellotge.setMinuts(now.getMinute());
+                    Main.ctrl0.drawing.rellotge.setSegons(now.getSecond());
 
                     try { Thread.sleep(500); } 
                     catch (InterruptedException e) { e.printStackTrace(); }
@@ -72,7 +72,7 @@ public class Futures {
                         continue;
                     };
 
-                    Main.cotxe.destiX = (int) (Math.random() * 300);
+                    Main.ctrl0.drawing.cotxe.destiX = (int) (Math.random() * 300);
 
                     try { Thread.sleep(1500); } 
                     catch (InterruptedException e) { e.printStackTrace(); }
