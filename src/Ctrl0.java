@@ -34,11 +34,11 @@ public class Ctrl0 implements Initializable {
         });
     }
 
-    public void startDrawing () {
+    public void drawingStart () {
         drawing.start(canvas);
     }
 
-    public void stopDrawing () {
+    public void drawingStop () {
         drawing.start(canvas);
     }
 
