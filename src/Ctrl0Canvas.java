@@ -12,6 +12,7 @@ public class Ctrl0Canvas {
     private AnimationTimer animationTimer;
 
     public ArrayList<UtilsDrawObj> drawingList = new ArrayList<>();
+    
     public DrawObjCarretera carretera = new DrawObjCarretera();
     public DrawObjCotxe cotxe = new DrawObjCotxe();
     public DrawObjMoto moto = new DrawObjMoto();
@@ -36,7 +37,6 @@ public class Ctrl0Canvas {
         animationTimer.start();
 
         // Crear objectes
-        // Crear objectes
         drawingList.add(carretera);
         drawingList.add(cotxe);
         drawingList.add(moto);
@@ -51,6 +51,8 @@ public class Ctrl0Canvas {
 
     // Animar
     private void run(double fps) {
+
+        if (fps == 0) return;
 
         // Animar elements
         for (UtilsDrawObj obj : drawingList) {

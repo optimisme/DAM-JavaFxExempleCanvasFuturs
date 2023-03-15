@@ -12,6 +12,7 @@ public class DrawObjCotxe implements UtilsDrawObj {
 
     // Animar la posició del cotxe cap al destí
     public void run(Canvas cnv, double fps) {
+
         if (x < destiX) {
             x = x + 100.0 / fps;
         }
