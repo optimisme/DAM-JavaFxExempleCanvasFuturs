@@ -20,7 +20,7 @@ public class Ctrl0 implements Initializable {
     @FXML
     private HBox hbox;
 
-    public Ctrl0Canvas drawing = new Ctrl0Canvas();
+    public Ctrl0Canvas ctrlCanvas = new Ctrl0Canvas();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -35,11 +35,11 @@ public class Ctrl0 implements Initializable {
     }
 
     public void drawingStart () {
-        drawing.start(canvas);
+        ctrlCanvas.start(canvas);
     }
 
     public void drawingStop () {
-        drawing.start(canvas);
+        ctrlCanvas.start(canvas);
     }
 
     public void updateCanvasSize () {
@@ -53,32 +53,32 @@ public class Ctrl0 implements Initializable {
         // Quan apretem "amunt" o "avall" el bus comença a moure's
         if (evt.getEventType() == KeyEvent.KEY_PRESSED) {
             if (evt.getCode() == KeyCode.UP) {
-                drawing.bus.direccio = "amunt";
+                ctrlCanvas.bus.direccio = "amunt";
             }
             if (evt.getCode() == KeyCode.DOWN) {
-                drawing.bus.direccio = "avall";
+                ctrlCanvas.bus.direccio = "avall";
             }
         }
 
         // Quan deixem anar "amunt" o "avall" el bus para si la direcció coincideix
         if (evt.getEventType() == KeyEvent.KEY_RELEASED) {
-            if (evt.getCode() == KeyCode.UP && drawing.bus.direccio == "amunt") {
-                drawing.bus.direccio = "quiet";
+            if (evt.getCode() == KeyCode.UP && ctrlCanvas.bus.direccio == "amunt") {
+                ctrlCanvas.bus.direccio = "quiet";
             }
-            if (evt.getCode() == KeyCode.DOWN && drawing.bus.direccio == "avall") {
-                drawing.bus.direccio = "quiet";
+            if (evt.getCode() == KeyCode.DOWN && ctrlCanvas.bus.direccio == "avall") {
+                ctrlCanvas.bus.direccio = "quiet";
             }
         }
     }
 
     @FXML
     public void actionCar () {
-        drawing.cotxe.posicionaY();
+        ctrlCanvas.cotxe.posicionaY();
     }
 
     @FXML
     public void actionMoto () {
-        drawing.moto.posicionaY();
+        ctrlCanvas.moto.posicionaY();
     }
 
     @FXML
