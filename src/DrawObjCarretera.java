@@ -42,6 +42,6 @@ public class DrawObjCarretera implements UtilsDrawObj {
         // Text explicatiu
         gc.setFill(Color.GRAY);
         gc.setFont(new Font("Arial", 12));
-        gc.fillText("Tecles amunt i avall mouen el BUS\nBotons canvien Y de cotxe/moto\nProper destí del cotxe " + Main.ctrl0.drawing.cotxe.destiX, 10, 200);
+        gc.fillText("Tecles amunt i avall mouen el BUS\nBotons canvien Y de cotxe/moto\nProper destí del cotxe " + Main.ctrl0.ctrlCanvas.cotxe.destiX, 10, 200);
     }
 }
