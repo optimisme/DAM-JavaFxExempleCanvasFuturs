@@ -7,13 +7,20 @@ En aquest projecte hi ha diversos exemples de com dibuixar en un Canvas de JavaF
 A Linux i OSX:
 
 ```
-./run.sh
+./compile.sh
 ```
 
 A Windows Powershell:
 
 ```
-.\run.bat
+.\compile.bat
+```
+
+Or, from Visual Studio Code:
+
+```
+"Terminal > Run task > Compile Project"
+
 ```
 
 ### Llicència ###
