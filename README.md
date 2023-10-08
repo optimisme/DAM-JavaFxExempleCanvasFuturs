@@ -4,28 +4,15 @@ En aquest projecte hi ha diversos exemples de com dibuixar en un Canvas de JavaF
 
 ### Compilació i funcionament ###
 
-A Linux i OSX:
-
-```
-./compile.sh
-```
-
-A Windows Powershell:
-
-```
-.\compile.bat
+Cal el 'Maven' per compilar el projecte
+```bash
+mvn clean
+mvn compile
+mvn exec:java -Dexec.mainClass="com.project.Main" -q
 ```
 
-Or, from Visual Studio Code:
+Per executar el projecte a Windows cal
+.\run.ps1 com.project.Main
 
-```
-"Terminal > Run task > Compile Project"
-
-```
-
-### Llicència ###
-
-Tenir en compte les llicències JavaFX que hi ha en cada una de les respectives carpetes
-
-[JavaFX](https://openjdk.org/projects/openjfx/)
-
+Per executar el projecte a Linux/macOS cal
+./run.sh com.project.Main
